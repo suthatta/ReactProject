@@ -1,0 +1,11 @@
+.wrapper {
+  display:flex;
+  flex-direction: column;
+  grid-gap:10px;
+
+}
+.Projects-list {
+  border:solid blanchedalmond 1px;
+  width:80%;
+  list-style: none;
+}

@@ -1,0 +1,44 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html {
+  height:100%;
+  background: black;
+  color:white;
+} 
+.App {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  margin-left: 10px;
+
+}
+.nav-lists li{
+  list-style: none;
+  padding:2px;
+  margin:5px;
+
+  cursor: pointer;
+}
+.nav-lists li a{
+  text-decoration: none;
+}
+
+.nav-lists li a:hover,
+.nave-lists li a:focus {
+ text-decoration: yellow;
+ color:blueviolet;
+}
+
+.nav-lists li a:active {
+  text-decoration:blue;
+  color:red;
+ }
+
+ main {
+   margin-left:20px;
+ }
