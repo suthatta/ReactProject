@@ -40,5 +40,8 @@ nav {
  }
 
  main {
-   margin-left:20px;
+  margin: auto auto;
+  text-align: left;
+  margin-left:20px;
  }
+ 

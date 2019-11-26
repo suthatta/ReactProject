@@ -1,30 +1,44 @@
 import React, { Component } from 'react'
 
 class Express extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
-      customers: []
-    };
+      items: [],
+      isLoaded: false,
+    }
   }
-
   componentDidMount() {
-    fetch('/api/customers')
-      .then(res => res.json())
-      .then(customers => this.setState({ customers }, () => console.log('Customers fetched...', customers)));
+    fetch('/api/express')
+      .then(rest => rest.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          items: json,
+        })
+      });
   }
 
   render() {
-    return (
-      <div>
-        <h2>Express</h2>
-        <ul>
-          {this.state.customers.map(customer =>
-            <li key={customer.id}>{customer.firstName} {customer.lastName}</li>
-          )}
-        </ul>
-      </div>
-    );
+    const { isLoaded, items } = this.state;
+    if (!isLoaded) {
+      return <div>Loading....</div>
+    } else {
+      return (
+        <div className="wrapper">
+          <h3>List</h3>
+          <ul className="Project-Lists">
+            {items.map(item => (
+              <li className="Projects-list" key={item.id}>
+                Name :{item.name}
+                <br></br>
+                Description :{item.des}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   }
 }
 export default Express;
