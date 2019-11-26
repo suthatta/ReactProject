@@ -11,22 +11,23 @@ export const Hooks = () => {
       const result = await axios(
         'https://portfolio-d23d4.firebaseio.com/projects.json',
       );
-      setData(result.data);
+      setData({ items: result.data });
     };
+    console.log("fetchData ", fetchData)
     fetchData();
   }, []);
   return (
-    <ul className="Project-Lists">
-      {data.items.map(item => (
-        < li key={item.id} >
-          Name :{item.name}
-          <br></br>
-          Description :{item.des}
-        </li>
-      ))
-      }
-    </ul >
+    <div className="wrapper"><h3>Hooks</h3>
+      <ul className="hooks-items">
+        {data.items.map(item => (
+          < li key={item.id} >
+            <p>Name :{item.name}</p>
+            <p>Description :{item.des}</p>
+          </li>
+        ))}
+      </ul >
+    </div>
+
   );
 }
 
-export default Hooks;

@@ -1,7 +1,16 @@
+.wrapper {
+  display:flex;
+  flex-direction: column;
+  grid-gap:10px;
+
+}
 .hooks-items {
-  color: white;
-}
-.hooks-items li{
-  list-style-type: none;
-  color: white;
-}
+ 
+  width:80%;
+  list-style: none;
+
+  }
+  .hooks-items li{
+    border:solid blanchedalmond 1px;
+ 
+    } 
