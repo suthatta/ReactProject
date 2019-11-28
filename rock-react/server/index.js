@@ -1,16 +1,21 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.get('/api/express', (req, res) => {
-  const customers = [
-    { id: 1, firstName: 'John', lastName: 'Doe' },
-    { id: 2, firstName: 'Brad', lastName: 'Traversy' },
-    { id: 3, firstName: 'Mary', lastName: 'Swanson' },
-  ];
 
-  res.json(customers);
+  const apiUrl = 'https://portfolio-d23d4.firebaseio.com/projects.json'
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(data => {
+      res.send({ data });
+    })
+    .catch(err => {
+      console.log('error', err)
+    })
+
 });
 
-const port = 5000;
+
 
 app.listen(port, () => `Server running on port ${port}`);

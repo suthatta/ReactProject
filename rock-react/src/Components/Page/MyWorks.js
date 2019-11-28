@@ -1,9 +1,22 @@
-import React from 'react'
-const MyWorks = () => {
+import React, { Component } from 'react'
+import './MyWorks.css'
 
-  return <div>
-    <h2>MyWork are here</h2>
-  </div>
+class MyWorks extends Component {
+  render() {
+    return <div className="myWorks-container">
+      <h2>React Fetching API</h2>
+      <div className="myWorks-flex">
+        <div className="myWorks-lists">
+          <ul><li>List</li>
+            <li>Hooks</li>
+            <li>Express</li>
+          </ul>
+        </div>
+        <div className="myWorks-contents">DIv2</div>
+      </div>
+    </div>
+  }
+
 }
 
 export default MyWorks;

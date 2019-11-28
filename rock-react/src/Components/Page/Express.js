@@ -10,8 +10,9 @@ class Express extends Component {
   }
   componentDidMount() {
     fetch('/api/express')
-      .then(rest => rest.json())
+      .then(res => res.json())
       .then(json => {
+        console.log('hej fetching')
         this.setState({
           isLoaded: true,
           items: json,
@@ -20,6 +21,7 @@ class Express extends Component {
   }
 
   render() {
+    console.log('hej there')
     const { isLoaded, items } = this.state;
     if (!isLoaded) {
       return <div>Loading....</div>

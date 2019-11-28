@@ -11,7 +11,7 @@ class List extends Component {
   }
   componentDidMount() {
     fetch('https://portfolio-d23d4.firebaseio.com/projects.json')
-      .then(rest => rest.json())
+      .then(res => res.json())
       .then(json => {
         this.setState({
           isLoaded: true,

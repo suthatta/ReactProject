@@ -28,6 +28,7 @@ export class App extends React.Component {
           </nav>
 
           <main>
+
             <Switch>
               <Route path="/home">
                 <Home />
