@@ -22,7 +22,7 @@ export class App extends React.Component {
           <nav className="nav-lists">
             {this.navItems.map(item => {
               return (
-                <li className="nav-list-item"> <Link to={`/${item.toLowerCase()}`}>{item}</Link></li>
+                <li className="nav-list-item" key={item}> <Link to={`/${item.toLowerCase()}`}>{item}</Link></li>
               )
             })}
           </nav>
@@ -49,7 +49,7 @@ export class App extends React.Component {
 
           </main>
         </Router >
-      </div>
+      </div >
     )
   }
 }

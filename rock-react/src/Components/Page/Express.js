@@ -12,7 +12,6 @@ class Express extends Component {
     fetch('/api/express')
       .then(res => res.json())
       .then(json => {
-        console.log('hej fetching')
         this.setState({
           isLoaded: true,
           items: json,
@@ -21,17 +20,16 @@ class Express extends Component {
   }
 
   render() {
-    console.log('hej there')
     const { isLoaded, items } = this.state;
     if (!isLoaded) {
       return <div>Loading....</div>
     } else {
       return (
         <div className="wrapper">
-          <h3>List</h3>
-          <ul className="Project-Lists">
-            {items.map(item => (
-              <li className="Projects-list" key={item.id}>
+          <h3>Express</h3>
+          <ul>
+            {items.data.map(item => (
+              <li key={item.id}>
                 Name :{item.name}
                 <br></br>
                 Description :{item.des}

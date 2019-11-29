@@ -13,7 +13,6 @@ export const Hooks = () => {
       );
       setData({ items: result.data });
     };
-    console.log("fetchData ", fetchData)
     fetchData();
   }, []);
   return (

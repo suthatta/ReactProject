@@ -12,10 +12,14 @@
   list-style: none;
   border-right:solid coral 0.5px;
 
+
+
 }
 .myWorks-lists ul {
   list-style: none;
   cursor: pointer;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .myWorks-contents {
   background: grey;
