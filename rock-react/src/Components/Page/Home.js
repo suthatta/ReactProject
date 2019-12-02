@@ -19,8 +19,9 @@ export default class Home extends Component {
     const country = e.target.elements.country.value;
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
     const data = await api_call.json();
-    console.log(data)
+    console.log('city country', city, country)
     if (city && country) {
+      console.log('hi city, country', city, country)
       this.setState = ({
         temperature: data.main.temp,
         city: data.className,
@@ -30,6 +31,7 @@ export default class Home extends Component {
         error: ""
       })
     } else {
+
       this.setState({
         temperature: undefined,
         city: undefined,
@@ -49,6 +51,7 @@ export default class Home extends Component {
       <h4>Please call me home!</h4>
       <h4>Please come back home! :O </h4>
       <div>
+        {console.log('this state ', this.state)}
         <Title />
         <Form getWeather={this.getWeather} />
         <Weather
@@ -58,6 +61,7 @@ export default class Home extends Component {
           country={this.state.country}
           description={this.state.description}
           error={this.state.error}
+
         />
       </div>
     </div>);
